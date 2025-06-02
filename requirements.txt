@@ -1,0 +1,23 @@
+fastapi>=0.115.0
+uvicorn>=0.32.0
+pydantic>=2.10.0
+python-multipart>=0.0.12
+
+# Optional AI dependencies
+# Uncomment and install as needed:
+
+# For OpenAI integration:
+# openai==1.3.0
+
+# For local AI models:
+# transformers==4.35.0
+# torch==2.1.0
+# tensorflow==2.13.0
+
+# For web scraping and requests:
+# requests==2.31.0
+# beautifulsoup4==4.12.0
+
+# For better text processing:
+# spacy==3.7.0
+# nltk==3.8.0

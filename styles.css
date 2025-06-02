@@ -1,0 +1,174 @@
+/* Extension styles */
+.coursera-automation-highlight {
+    outline: 2px solid #22c55e !important;
+    background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+.coursera-automation-processing {
+    outline: 2px solid #f59e0b !important;
+    background-color: rgba(245, 158, 11, 0.1) !important;
+}
+
+.coursera-automation-answered {
+    outline: 2px solid #22c55e !important;
+    background-color: rgba(34, 197, 94, 0.2) !important;
+}
+
+/* Custom speed indicator */
+.coursera-speed-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10000;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.coursera-speed-indicator.show {
+    opacity: 1;
+}
+
+/* Auto answer status indicator */
+.coursera-auto-answer-status {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(34, 197, 94, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10000;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.coursera-auto-answer-status.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.coursera-auto-answer-status.disabled {
+    background: rgba(239, 68, 68, 0.9);
+}
+
+/* Enhanced status indicators */
+.coursera-status-panel {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(30, 41, 59, 0.95);
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    font-size: 13px;
+    z-index: 10001;
+    min-width: 280px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.coursera-status-panel.hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.coursera-status-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #22c55e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.coursera-status-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.coursera-status-item:last-child {
+    border-bottom: none;
+}
+
+.coursera-status-value {
+    font-weight: 600;
+    color: #60a5fa;
+}
+
+.coursera-confidence-bar {
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 2px;
+}
+
+.coursera-confidence-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e);
+    transition: width 0.3s ease;
+}
+
+.coursera-ai-thinking {
+    animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+/* Question highlighting improvements */
+.coursera-question-detected {
+    position: relative;
+}
+
+.coursera-question-detected::before {
+    content: '🤖 AI Processing...';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    background: rgba(59, 130, 246, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 1000;
+    animation: slideInDown 0.3s ease;
+}
+
+.coursera-question-answered::before {
+    content: '✅ AI Answered';
+    background: rgba(34, 197, 94, 0.9);
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
